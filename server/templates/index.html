@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title -%} PNaaS {%- endblock %}
+
+{% block content %}
+<div class="jumbotron">
+    <div class="container">
+        <h1>PNaaS</h1>
+        <h2>Project (or Preas) Naming as a Service</h2>
+        <p>Leveraging the quick wit of someone more clever than you.</p>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">About</div>
+                <div class="panel-body">
+                    The two hardest problems in computer science are:
+                    <ol>
+                        <li>Naming things</li>
+                        <li>Cache invalidation</li>
+                        <li>Off by one errors</li>
+                    </ol>
+                    So you find yourself starting a new project, before you begin you have to name it something thats going to badass. Unfortunately, you are inept in puns, and overall not good very with the word things. Fortunately, there is someone more clever than you. Ask the oracle of naming shit, <a href="https://twitter.com/joelintheory/">@joelintheory</a>, to grant you some clevertext. He also accepts cash.
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">How to use - Abstract</div>
+                <div class="panel-body">
+                    POST some shit to https://pnaas.geocities.io/request with form field desc and owner filled out. The field desc is the description of your poject, owner is who you think you are. You will get your reservation ID back, hit up https://pnaas.geocities.io/retrieve/{resid} to check the status of your lame request. The response status will Open, Responsed, or Updated. Responses will be a list.
+                </div>
+                <div class="panel-heading">How to use - cURL</div>
+                <div class="panel-body">
+                    curl -d owner="Funny Guy" -d desc="A web9.0 enabled store that sells old AOL discs to ferrets" https://pnaas.geocities.io/request
+                    <br>
+                    curl https://pnaas.geocities.io/retrieve/163d57cf2b7c4b1ad3c3c8b5
+                    <br>
+                    {"status": "Open", "resid": "163d57cf2b7c4b11b772b285ad3c3c8b", "responses": [], "created": "2015-02-15 03:02:44 UTC", "owner": "Funny Guy", "desc": "A web9.0 enabled store that sells old AOL discs to ferrets"}
+                </div>
+                <div class="panel-heading">How to use - <a href="https://github.com/kremlinkev/pnaas/">pnaasclient.py <span class="glyphicon glyphicon-link"></span></a></div>
+                <div class="panel-body">
+                    Add some shit
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

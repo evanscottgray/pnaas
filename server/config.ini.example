@@ -1,0 +1,4 @@
+dburl = sqlite:///test.db
+
+[admin]
+password = adminpass
